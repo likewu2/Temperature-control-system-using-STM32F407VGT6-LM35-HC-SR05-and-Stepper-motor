@@ -10,3 +10,8 @@ This a distance measurement sensor and for this project, I used the rising edge 
 
 <img src="Pic/US1.png" width="400" class="center" />
 <img src="Pic/US2.png" width="400" class="center" />
+# Stepper Motor : 
+I used this motor as a valve controller (if the Temperature is high the motor will rotate and will close the valve and vice versa ) 
+
+<img src="Pic/SM1.png" width="400" class="center" />
+<img src="Pic/SM2.png" width="400" class="center" />
