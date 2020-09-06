@@ -6,6 +6,7 @@ This is a Temperature Sensor that measures temperature and based on a formula we
 
 <img src="Pic/lm351.png" width="400" class="center" />
 <img src="Pic/lm352.png" width="400" class="center" />
+
 # HC-SR05 (Ultrasonic) : 
 This a distance measurement sensor and for this project, I used the rising edge method to calculate the distance after every clock 
 
