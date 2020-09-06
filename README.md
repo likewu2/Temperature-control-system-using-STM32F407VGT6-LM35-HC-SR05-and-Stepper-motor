@@ -16,5 +16,5 @@ I used this motor as a valve controller (if the Temperature is high the motor wi
 
 <img src="Pic/SM1.png" width="400" class="center" />
 <img src="Pic/SM2.png" width="400" class="center" />
-# Arduino Due:
+# Arduino Due :
 I used this for sending and receiving commands.
