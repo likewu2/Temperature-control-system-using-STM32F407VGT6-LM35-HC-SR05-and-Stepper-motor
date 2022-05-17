@@ -83,7 +83,8 @@ int main(int argc, char* argv[])
 
   puts("Standard output message.");
 
-  fprintf(stderr, "Standard error message.\n");
+  //fprintf(stderr, "Standard error message.\n");
+  fprintf(stdout, "Standard error message.\n");
 
   trace_printf("System clock: %u Hz\n", SystemCoreClock);
 

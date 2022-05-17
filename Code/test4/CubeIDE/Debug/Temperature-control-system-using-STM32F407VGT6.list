@@ -720,10 +720,11 @@ trace_dump_args(int argc __attribute__((unused)),
  8000750:	482a      	ldr	r0, [pc, #168]	; (80007fc <main+0xc4>)
  8000752:	f003 ff47 	bl	80045e4 <puts>
 
-  fprintf(stderr, "Standard error message.\n");
+  //fprintf(stderr, "Standard error message.\n");
+  fprintf(stdout, "Standard error message.\n");
  8000756:	4b2a      	ldr	r3, [pc, #168]	; (8000800 <main+0xc8>)
  8000758:	681b      	ldr	r3, [r3, #0]
- 800075a:	68db      	ldr	r3, [r3, #12]
+ 800075a:	689b      	ldr	r3, [r3, #8]
  800075c:	2218      	movs	r2, #24
  800075e:	2101      	movs	r1, #1
  8000760:	4828      	ldr	r0, [pc, #160]	; (8000804 <main+0xcc>)
