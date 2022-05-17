@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (10.3-2021.10)
+# Toolchain: xPacks arm-none-eabi-gcc
 ################################################################################
 
 -include ../makefile.init
@@ -11,6 +11,8 @@ RM := rm -rf
 -include sources.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/system/src/diag/subdir.mk
+-include Core/system/src/cortexm/subdir.mk
+-include Core/system/src/cmsis/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk

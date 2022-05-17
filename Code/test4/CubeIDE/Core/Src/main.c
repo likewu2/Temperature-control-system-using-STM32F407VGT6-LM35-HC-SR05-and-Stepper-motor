@@ -16,7 +16,12 @@
   *
   ******************************************************************************
   */
+#include <stdio.h>
+#include <stdlib.h>
 #include "diag/trace.h"
+
+#include "timer.h"
+#include "led.h"
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -60,17 +65,57 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+// Keep the LED on for 2/3 of a second.
+#define BLINK_ON_TICKS  (TIMER_FREQUENCY_HZ * 3 / 4)
+#define BLINK_OFF_TICKS (TIMER_FREQUENCY_HZ - BLINK_ON_TICKS)
 /* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
   * @retval int
   */
-int main(void)
+int main(int argc, char* argv[])
 {
   /* USER CODE BEGIN 1 */
+  trace_dump_args(argc, argv);
+
   trace_puts("Hello Arm World!");
+
+  puts("Standard output message.");
+
+  fprintf(stderr, "Standard error message.\n");
+
+  trace_printf("System clock: %u Hz\n", SystemCoreClock);
+
+  timer_start();
+
+  blink_led_init();
+
+  uint32_t seconds = 0;
+
+#define LOOP_COUNT (10)
+
+  int loops = LOOP_COUNT;
+  if (argc > 1)
+    {
+      // If defined, get the number of loops from the command line,
+      // configurable via semihosting.
+      loops = atoi (argv[1]);
+    }
+
+  // Short loop.
+  for (int i = 0; i < loops; i++)
+    {
+      blink_led_on();
+      timer_sleep(i == 0 ? TIMER_FREQUENCY_HZ : BLINK_ON_TICKS);
+
+      blink_led_off();
+      timer_sleep(BLINK_OFF_TICKS);
+
+      ++seconds;
+      // Count seconds on the trace device.
+      trace_printf("Second %u\n", seconds);
+    }
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/

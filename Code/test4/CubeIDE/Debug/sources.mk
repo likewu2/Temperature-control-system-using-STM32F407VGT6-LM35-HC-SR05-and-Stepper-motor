@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (10.3-2021.10)
+# Toolchain: xPacks arm-none-eabi-gcc
 ################################################################################
 
 ELF_SRCS := 
@@ -23,6 +23,8 @@ C_DEPS :=
 SUBDIRS := \
 Core/Src \
 Core/Startup \
+Core/system/src/cmsis \
+Core/system/src/cortexm \
 Core/system/src/diag \
 Drivers/STM32F4xx_HAL_Driver/Src \
 
